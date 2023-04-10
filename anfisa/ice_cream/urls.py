@@ -1,5 +1,4 @@
 from django.urls import path
-
 from . import views
 
 
@@ -14,4 +13,8 @@ urlpatterns = [
         'ice_cream/<int:pk>/',
         views.ice_cream_detail
     ),
+
+    path(
+        'secret/<int:pk>/', views.secret
+    )
 ]

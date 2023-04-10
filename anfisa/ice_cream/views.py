@@ -1,8 +1,10 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse('Главная страница')
+    template = 'posts/index.html'
+    return render(request, template)
 
 
 def ice_cream_list(request):
@@ -11,4 +13,8 @@ def ice_cream_list(request):
 
 # В урл мы ждем парметр, и нужно его прередать в функцию для использования
 def ice_cream_detail(request, pk):
-    return HttpResponse(f'Мороженое номер {pk}')
+    return HttpResponse(f'Мороженоеномер {pk}')
+
+
+def secret(request, pk):
+    return HttpResponse(f'ты пидор № {pk}')
